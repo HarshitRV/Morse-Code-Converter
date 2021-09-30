@@ -1,15 +1,17 @@
-from morse import MorseCode
 
-translate = MorseCode()
 
-message = input("Enter a message: ")
+# from morse import MorseCode
 
-encoded_message = translate.to_morse(message)
+# translate = MorseCode()
 
-print(encoded_message)
+# message = input("Enter a message: ")
 
-decode = encoded_message
+# encoded_message = translate.to_morse(message)
 
-decoded_message = translate.to_english(decode)
+# print(encoded_message)
 
-print(decoded_message)
+# decode = encoded_message
+
+# decoded_message = translate.to_english(decode)
+
+# print(decoded_message)
