@@ -33,7 +33,8 @@ class MorseCode:
 
     def to_english(self, code_in_morse):
         '''
-        Converts morse code to english takes one
+        Converts morse code to english takes one required parameter
+        code_in_morse as a string
         '''
 
         # Checking if the entered code has "/" as seperator or not?
