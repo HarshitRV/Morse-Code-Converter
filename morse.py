@@ -14,10 +14,11 @@ class MorseCode:
             for letter in word:
                 morse_translation.append(morse_code[letter.lower()])
 
-            morse_translation.append("     ")
+            morse_translation.append("/")
 
-        self.in_morse = "   ".join(morse_translation)
+        self.in_morse = " ".join(morse_translation)
 
         return self.in_morse
 
-    # def to_message(self, morse_code):
+    def to_message(self, morse_code):
+        pass
