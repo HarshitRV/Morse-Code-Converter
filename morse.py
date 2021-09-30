@@ -35,22 +35,27 @@ class MorseCode:
         '''
         Converts morse code to english takes one
         '''
+
+        # Checking if the entered code has "/" as seperator or not?
         if "/" in code_in_morse:
             code_list = code_in_morse.split(" / ")
         else:
             code_list = code_in_morse.split(" ")
 
+        # Creating a list for morse code to convert it later to english
         morse_list = []
         for code in code_list:
             code = code.split(" ")
             morse_list.append(code)
         
+        # Looping through the dictionary of morse code and replacing morse to letter
         for word in morse_list:
             for letter in word:
                 for key, value in morse_code.items():
                     if letter == value:
                         self.in_english += key
             
+            # After each word concatinating the white space
             self.in_english += " "
         
         return self.in_english
