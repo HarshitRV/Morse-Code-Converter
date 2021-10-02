@@ -1,45 +1,24 @@
 from tkinter import *
+from morse import MorseCode
 
-# Configs
-FONT_NAME = "Courier"
+translate = MorseCode()
 
-# Buttons function
-
-def enter():
-    normal_text = text_entry.get("1.0",'end-1c')
-    morse_text = morse_entry.get("1.0",'end-1c')
-    print(normal_text, morse_text)
-
-    text_entry.delete("0", END)
-    text_entry.insert("Herefiw iwefi oiwf")
+def morse_code():
+    text = e.get()
+    print(text)
+    e.delete(0, END)
+    e.insert(0, translate.to_morse(text))
 
 # UI SETUP
+root = Tk()
+root.title("Morse Code Converter")
 
-window = Tk()
-window.title("Morse Code Converter")
-window.geometry("600x600")
-window.config(padx=30, pady=30)
+e = Entry(root, width=35, borderwidth=5)
+e.grid(row=0, column=0, columnspan=3, pady=10, padx=10)
+e.focus()
 
-# Label enter text
-enter_text = Label(text="English Text", font=(FONT_NAME, 30, "bold"))
-enter_text.grid(row=0, column=0)
+morse = Button(root, text="To Morse", command=morse_code).grid(row=1, column=0)
+exit = Button(root, text="Exit", command=root.quit).grid(row=1, column=1)
+english = Button(root, text="To English").grid(row=1, column=2)
 
-# Entry text
-text_entry = Text(width=70,height=10,highlightcolor="black")
-text_entry.grid(row=1,column=0,columnspan=1)
-text_entry.config(highlightcolor="black", highlightbackground="black")
-
-# Label enter morse
-enter_morse_text = Label(text="Morse Code", font=(FONT_NAME, 30, "bold"))
-enter_morse_text.grid(row=2, column=0)
-
-# Entry morse
-morse_entry = Text(width=70,height=10,highlightcolor="black")
-morse_entry.grid(row=3,column=0,columnspan=1)
-morse_entry.config(highlightcolor="black", highlightbackground="black")
-
-# Buttons
-convert_button = Button(window, text = 'Convert',command = enter, background="red")
-convert_button.grid(row=4, column=0)
-
-window.mainloop()
+root.mainloop()
