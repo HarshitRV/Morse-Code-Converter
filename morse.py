@@ -10,6 +10,7 @@ class MorseCode:
         Takes one required parameter sentence of type string and
         converts it into the equivalent morse code.
         '''
+        self.in_morse = ""
         sentence = sentence.split(" ")
         # print(sentence)
 
@@ -36,7 +37,7 @@ class MorseCode:
         Converts morse code to english takes one required parameter
         code_in_morse as a string
         '''
-
+        self.in_english = ""
         # Checking if the entered code has "/" as seperator or not?
         if "/" in code_in_morse:
             code_list = code_in_morse.split(" / ")
